@@ -1,0 +1,235 @@
+/* ══════════════════════════════════════
+   OctoFit Tracker — Global Styles
+══════════════════════════════════════ */
+
+/* ── CSS Custom Properties ── */
+:root {
+  --octo-navy:      #0d1b2a;
+  --octo-teal:      #0dcaf0;
+  --octo-teal-dark: #0a9ab8;
+  --octo-accent:    #4cc9f0;
+  --octo-green:     #198754;
+  --octo-red:       #dc3545;
+  --octo-yellow:    #ffc107;
+  --octo-bg:        #e8f0fe;
+  --octo-surface:   #ffffff;
+  --octo-text:      #1a1f36;
+  --octo-muted:     #6c757d;
+  --octo-border:    #dee2e6;
+}
+
+/* ── Base ── */
+body {
+  background: linear-gradient(135deg, #e8f0fe 0%, #c8d8f8 100%);
+  background-attachment: fixed;
+  color: var(--octo-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ── Navigation ── */
+.octofit-navbar {
+  background: linear-gradient(90deg, var(--octo-navy) 0%, #1a2f4a 100%) !important;
+  border-bottom: 3px solid var(--octo-teal);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  font-size: 1.4rem;
+  letter-spacing: 0.3px;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.navbar-brand .brand-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--octo-teal);
+  padding: 2px;
+}
+
+.navbar-brand span.brand-accent {
+  color: var(--octo-teal);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(13, 202, 240, 0.15);
+}
+
+.nav-link.active {
+  color: var(--octo-teal) !important;
+  font-weight: 700;
+  background: rgba(13, 202, 240, 0.12);
+}
+
+/* ── Page headings ── */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--octo-text);
+  font-weight: 700;
+}
+
+/* ── Links ── */
+a {
+  color: var(--octo-teal-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--octo-teal);
+  text-decoration: underline;
+}
+
+.link-primary {
+  color: var(--octo-teal-dark) !important;
+}
+
+.link-primary:hover {
+  color: var(--octo-teal) !important;
+}
+
+/* ── Cards ── */
+.octofit-card {
+  border: none;
+  border-radius: 0.9rem;
+  box-shadow: 0 4px 20px rgba(13, 27, 42, 0.1);
+  overflow: hidden;
+  background: var(--octo-surface);
+}
+
+.octofit-card .card-header {
+  padding: 1rem 1.5rem;
+  border-bottom: none;
+}
+
+.octofit-card .card-body {
+  padding: 0;
+}
+
+/* ── Tables ── */
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  background-color: #1a2f4a !important;
+  color: var(--octo-teal) !important;
+  border-color: #2d4a6a;
+  padding: 0.85rem 1rem;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(13, 202, 240, 0.06);
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 0.8rem 1rem;
+  border-color: var(--octo-border);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > td {
+  background-color: rgba(13, 202, 240, 0.04);
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background-color: var(--octo-teal-dark);
+  border-color: var(--octo-teal-dark);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--octo-teal);
+  border-color: var(--octo-teal);
+  color: #1a1f36;
+}
+
+.btn-outline-primary {
+  color: var(--octo-teal-dark);
+  border-color: var(--octo-teal-dark);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--octo-teal-dark);
+  border-color: var(--octo-teal-dark);
+  color: #fff;
+}
+
+/* ── Badges ── */
+.badge.bg-light {
+  font-size: 0.8rem;
+  padding: 0.4em 0.7em;
+}
+
+/* ── Leaderboard rank badges ── */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background-color: var(--octo-teal-dark);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.rank-badge.gold   { background: linear-gradient(135deg, #f9c74f, #f3722c); color: #212529; }
+.rank-badge.silver { background: linear-gradient(135deg, #c9d6df, #adb5bd); color: #212529; }
+.rank-badge.bronze { background: linear-gradient(135deg, #cd7f32, #a0522d); color: #fff; }
+
+/* ── Spinners ── */
+.spinner-border {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ── Alerts ── */
+.alert {
+  border-radius: 0.75rem;
+  border-left: 5px solid;
+}
+
+.alert-danger {
+  border-left-color: var(--octo-red);
+  background-color: #fff5f5;
+  color: #842029;
+}
+
+/* ── Footer ── */
+.octofit-footer {
+  background: linear-gradient(90deg, var(--octo-navy) 0%, #1a2f4a 100%);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  border-top: 2px solid var(--octo-teal);
+  padding: 1rem 0;
+}
